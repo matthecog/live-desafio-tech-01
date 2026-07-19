@@ -21,7 +21,7 @@ jobs:
             - name: "Checkout Repository"
               uses: actions/checkout@v4
 
-            - name: "Terraform init"
+            - name: "Terraform Init"
               working-directory: ./src
               run: terraform init -backend-config="bucket=${{ secrets.AWS_BUCKET_NAME }}" -backend-config="key=${{ secrets.AWS_BUCKET_FILE }}"
 
