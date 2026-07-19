@@ -33,4 +33,5 @@ jobs:
             - name: "Terraform Init"
               working-directory: ./src
 
-              run: terraform apply -auto-approve
+              #run: terraform apply -auto-approve
+              run: terraform destroy -auto-approve
