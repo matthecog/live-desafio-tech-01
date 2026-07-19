@@ -6,8 +6,6 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "fv-live-desafio-001"
-    key    = "live-state.tfstate"
     region = "sa-east-1"
   }
 }
