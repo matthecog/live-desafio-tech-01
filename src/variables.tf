@@ -10,7 +10,7 @@ variable "aws_vpc_name" {
   nullable    = false
 }
 
-variable "aws_aks_name" {
+variable "aws_eks_name" {
   description = "Name of the EKS cluster"
   type        = string
   nullable    = false
