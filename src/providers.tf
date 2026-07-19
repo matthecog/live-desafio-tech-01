@@ -5,11 +5,11 @@ terraform {
       version = "6.55.0"
     }
   }
-    backend "s3" {
-      bucket = "fv-live-desafio-001"
-      key    = "live-state.tfstate"
-      region = "sa-east-1"
-    }
+  backend "s3" {
+    bucket = "fv-live-desafio-001"
+    key    = "live-state.tfstate"
+    region = "sa-east-1"
+  }
 }
 
 provider "aws" {

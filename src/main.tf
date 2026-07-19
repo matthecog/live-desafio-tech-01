@@ -13,13 +13,23 @@ module "vpc" {
   enable_vpn_gateway = true
 
   tags = {
-    Terraform   = "true"
-    Environment = "producao"
-    Projeto     = "live"
+    Terraform                                   = "true"
+    Environment                                 = "producao"
+    Projeto                                     = "live"
+    "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
+  }
+
+  public_subnet_tags = {
+    "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
+    "kubernetes.io/role/elb"                    = "1"
+  }
+
+  private_subnet_tags = {
+    "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
+    "kubernetes.io/role/internal-elb"           = "1"
   }
 }
 
-/*
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 21.0"
@@ -43,7 +53,16 @@ module "eks" {
       min_size       = 2
       max_size       = 2
       desired_size   = 2
-    }
+      tags = {
+        Terraform   = "true"
+        Environment = "producao"
+        Projeto     = "live"
+    } }
+  }
+
+  tags = {
+    Terraform   = "true"
+    Environment = "producao"
+    Projeto     = "live"
   }
 }
-*/
