@@ -1,0 +1,17 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "6.55.0"
+    }
+  }
+    backend "s3" {
+      bucket = "fv-live-desafio-001"
+      key    = "live-state.tfstate"
+      region = "sa-east-1"
+    }
+}
+
+provider "aws" {
+  region = var.aws_region
+}
