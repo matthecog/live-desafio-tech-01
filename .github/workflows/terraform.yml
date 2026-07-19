@@ -32,10 +32,5 @@ jobs:
 
             - name: "Terraform Init"
               working-directory: ./src
-<<<<<<< HEAD
+
               run: terraform apply -auto-approve
-              
-              
-=======
-              run: terraform destroy -auto-approve
->>>>>>> 4e0d181abab64bf7f8b3460344f4504f568e2681
