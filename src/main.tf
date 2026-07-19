@@ -35,7 +35,7 @@ module "eks" {
   version = "~> 21.0"
 
   name               = var.aws_eks_name
-  kubernetes_version = "1.33"
+  kubernetes_version = "1.36"
 
   # Optional
   endpoint_public_access = true
