@@ -30,9 +30,7 @@ jobs:
               working-directory: ./src
               run: terraform init -backend-config="bucket=${{ secrets.AWS_BUCKET_NAME }}" -backend-config="key=${{ secrets.AWS_BUCKET_FILE }}"
 
-            - name: "Terraform Init"
+            - name: "Terraform Apply"
               working-directory: ./src
-
-              run: terraform apply -auto-approve
-              #run: terraform destroy -auto-approve
-              
+              #run: terraform apply -auto-approve
+              run: terraform destroy -auto-approve
