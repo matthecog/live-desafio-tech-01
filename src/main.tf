@@ -36,7 +36,7 @@ module "eks" {
   version = "~> 21.0"
 
   name               = var.aws_eks_name
-  kubernetes_version = "1.32" # DICA: Evite versoes nao lancadas como 1.36; use versoes estáveis suportadas pela AWS (ex: 1.31 ou 1.32)
+  kubernetes_version = "1.36"
 
   endpoint_public_access                   = true
   enable_cluster_creator_admin_permissions = true
